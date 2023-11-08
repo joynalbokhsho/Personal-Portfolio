@@ -1982,7 +1982,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 /* Customized Class */
 .activity_rpc {
   border: 2px solid transparent;
-  animation: rainbowRPC 30s linear infinite;
+  animation: rainbowRPC 20s linear infinite;
 }
 
 @keyframes rainbowRPC {
