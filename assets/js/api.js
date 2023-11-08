@@ -98,7 +98,7 @@ window.addEventListener('load', function() {
                 statusText = 'Online';
                 discord_status_text.style.color = 'green';
             } else if (status === 'idle') {
-                statusText = 'Idle';
+                statusText = 'Idle (AFK)';
                 discord_status_text.style.color = 'yellow';
             } else if (status === 'dnd') {
                 statusText = 'Do Not Disturb';
