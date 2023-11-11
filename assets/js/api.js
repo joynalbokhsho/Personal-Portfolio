@@ -89,26 +89,38 @@ window.addEventListener('load', function() {
             */
 
             let discord_status_text = document.getElementById("discordstatustext");
-            
-            // Replace 'status' with the actual Discord status you have in your 'userdata' object
-            let status = userdata.discord_status;
-            let statusText = status;
-            
-            if (status === 'online') {
-                statusText = 'Online';
-                discord_status_text.style.color = 'green';
-            } else if (status === 'idle') {
-                statusText = 'Idle (AFK)';
-                discord_status_text.style.color = 'yellow';
-            } else if (status === 'dnd') {
-                statusText = 'Do Not Disturb (Busy)';
-                discord_status_text.style.color = 'red';
-            } else if (status === 'offline') {
-                statusText = 'Offline on Discord';
-                discord_status_text.style.color = 'gray';
-            }
-            
-            discord_status_text.innerHTML = `<p class="title">${statusText}</p>`;
+
+// Replace 'status' with the actual Discord status you have in your 'userdata' object
+let status = userdata.discord_status;
+let statusText = status;
+
+if (status === 'online') {
+    statusText = 'Online';
+    discord_status_text.style.color = 'green';
+} else if (status === 'idle') {
+    statusText = 'Idle (AFK)';
+    discord_status_text.style.color = 'yellow';
+} else if (status === 'dnd') {
+    statusText = 'Do Not Disturb (Busy)';
+    discord_status_text.style.color = 'red';
+} else if (status === 'offline') {
+    // Assuming 'lastOnlineTime' is a timestamp representing the last online time
+    let lastOnlineTime = userdata.last_online_timestamp;
+
+    // Time difference in seconds
+    let timeDifference = Math.floor((Date.now() - lastOnlineTime) / 1000);
+
+    // If offline for more than 10 seconds, update statusText
+    if (timeDifference > 10) {
+        statusText = 'Maybe Gone Forever';
+        discord_status_text.style.color = 'gray';
+    } else {
+        statusText = 'Offline on Discord';
+        discord_status_text.style.color = 'gray';
+    }
+}
+
+discord_status_text.innerHTML = `<p class="title">${statusText}</p>`;
             
 
 
