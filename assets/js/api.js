@@ -104,17 +104,32 @@ if (status === 'online') {
     statusText = 'Do Not Disturb (Busy)';
     discord_status_text.style.color = 'red';
 } else if (status === 'offline') {
-    // Assuming 'lastOnlineTime' is a timestamp representing the last online time
-    let lastOnlineTime = userdata.last_online_timestamp;
+    // Check if there is stored offline status data
+    let offlineStatusData = localStorage.getItem('offlineStatusData');
 
-    // Time difference in seconds
-    let timeDifference = Math.floor((Date.now() - lastOnlineTime) / 1000);
+    if (offlineStatusData) {
+        // Parse the stored JSON data
+        let storedData = JSON.parse(offlineStatusData);
 
-    // If offline for more than 10 seconds, update statusText
-    if (timeDifference > 10) {
-        statusText = 'Maybe Gone Forever';
-        discord_status_text.style.color = 'gray';
+        // Assuming 'offlineTime' is the timestamp when the user went offline
+        let offlineTime = storedData.offlineTime;
+
+        // Time difference in seconds
+        let timeDifference = Math.floor((Date.now() - offlineTime) / 1000);
+
+        // If offline for more than 10 seconds, update statusText
+        if (timeDifference > 10) {
+            statusText = 'Maybe Gone Forever';
+            discord_status_text.style.color = 'gray';
+        } else {
+            statusText = 'Offline on Discord';
+            discord_status_text.style.color = 'gray';
+        }
     } else {
+        // Store offline status data
+        let offlineStatusData = { offlineTime: Date.now() };
+        localStorage.setItem('offlineStatusData', JSON.stringify(offlineStatusData));
+
         statusText = 'Offline on Discord';
         discord_status_text.style.color = 'gray';
     }
