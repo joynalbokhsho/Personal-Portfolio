@@ -2298,6 +2298,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     color: #0033ff;
   }
   100% {
-    color: #0000ff;
+    color: #ff0000;
   }
 }
