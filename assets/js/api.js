@@ -176,7 +176,7 @@ window.addEventListener('load', function() {
               discord_Rpc.innerHTML = `<li class="service-item">
 
               <div class="service-icon-box">
-              ${((activityName === "Spotify") || (activityName === "YouTube")) ? `<img src="${primaryUrl || altUrl}" alt="Discord RPC Icon" style="width: 72px; height:72px;" draggable="false" class="cd-container cd roundimg">` : `<img src="${primaryUrl || altUrl}" alt="Discord RPC Icon" width="40" draggable="false" class="activity_rpc">`}
+              ${((activityName === "Spotify") || (activityName === "YouTube")) ? `<img src="${primaryUrl || altUrl}" alt="Discord RPC Icon" style="width: 72px; height:72px;" draggable="false" class="cd-container cd roundimg">` : `<img src="${primaryUrl || altUrl}" alt="Discord RPC Icon" width="40" draggable="false">`}
               </div>
 
               <div class="service-content-box">
