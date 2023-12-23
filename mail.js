@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData(form);
         
         // Send form data to the PHP script using Fetch API
-        fetch('send_email.php', {
+        fetch('./send_email.php', {
             method: 'POST',
             body: formData
         })
