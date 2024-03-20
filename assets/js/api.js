@@ -73,7 +73,7 @@ window.addEventListener('load', function() {
 
             let discord_cv = document.getElementById("cvdl")
             discord_cv.innerHTML = `${userdata.kv.cvdl ? `<a href="${userdata.kv.cvdl}" target="_blank"><b style="color: white;">Download</b></a>`  : ''}`
-            /*
+            /* 
             let activity = document.getElementById("activity")
             activity.className = `activity_${userdata.discord_status}`
 
