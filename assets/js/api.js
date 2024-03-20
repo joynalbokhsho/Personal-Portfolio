@@ -95,7 +95,7 @@ window.addEventListener('load', function() {
             let statusText = status;
 
             if (status === 'online') {
-                statusText = 'Online';
+                statusText = 'Online on Discord';
                 discord_status_text.style.color = 'green';
             } else if (status === 'idle') {
                 statusText = 'Idle (AFK)';
