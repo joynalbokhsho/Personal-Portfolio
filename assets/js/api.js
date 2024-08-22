@@ -161,8 +161,8 @@ window.addEventListener('load', function() {
                 textColor = "#c13584";
               } else if (activityName === "YouTube") {
                 textColor = "red";
-              } else if (activityName === "Zoro.to") {
-                textColor = "#28b61b";
+              } else if (activityName === "AniWatch") {
+                textColor = "#A020F0";
               } else if (activityName === "Spotify") {
                 textColor = "green";
               } else if (activityName === "Minecraft Launcher") {
