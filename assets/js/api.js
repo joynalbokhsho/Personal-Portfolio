@@ -230,7 +230,7 @@ window.addEventListener('load', function() {
                 setInterval(updateTimer, 1000);
               }
             } else {
-              discord_Rpc.innerHTML = `${userdata.kv.rpc} <br> ${userdata.kv.musicoff}`;
+              discord_Rpc.innerHTML = `<!--${userdata.kv.rpc} <br> ${userdata.kv.musicoff}-->`;
             }
             
             /*
