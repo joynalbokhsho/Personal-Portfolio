@@ -139,7 +139,7 @@ window.addEventListener('load', function() {
               });
 
             let discord_name = document.getElementById("discordname")
-            discord_name.innerHTML = `<h1 class="name" title="Joynal Bokhsho">${userdata.discord_user.display_name}<p style="font-size: 14px;">(Jo Jo)</p></h1> `
+            discord_name.innerHTML = `<h1 class="name" title="Joynal Bokhsho">${userdata.discord_user.display_name}<p style="font-size: 14px;"><!--(Jo Jo)--></p></h1> `
 
             
             //my custom edited element
