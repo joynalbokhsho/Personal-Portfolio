@@ -32,7 +32,10 @@ window.addEventListener('load', function() {
 
             /*Avatar*/
             let discord_avatar = document.getElementById("discordAvatar")
-            discord_avatar.innerHTML = `<img draggable="false" src="https://cdn.discordapp.com/avatars/${userdata.discord_user.id}/${userdata.discord_user.avatar}.png?size=4096" srcset="" width="80" class="activity_${userdata.discord_status}">`
+            discord_avatar.innerHTML = `<img draggable="false" 
+     src="https://cdn.discordapp.com/avatars/${userdata.discord_user.id}/${userdata.discord_user.avatar}.${userdata.discord_user.avatar.startsWith('a_') ? 'gif' : 'png'}?size=4096" 
+     width="80" 
+     class="activity_${userdata.discord_status}">`
 
 
             //let discord_avatar = document.getElementById("discordAvatar")
